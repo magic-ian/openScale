@@ -1,0 +1,25 @@
+Source: openscale
+Section: misc
+Priority: optional
+Maintainer: openScale Team <maintainer@openscale.org>
+Build-Depends: debhelper-compat (= 13),
+               openjdk-21-jdk,
+               gradle
+Standards-Version: 4.6.0
+Homepage: https://github.com/oliexdev/openScale
+Vcs-Git: https://github.com/magic-ian/openScale.git
+Vcs-Browser: https://github.com/magic-ian/openScale
+
+Package: openscale
+Architecture: all
+Depends: ${misc:Depends},
+         openjdk-21-jre,
+         bluez
+Description: Open-source weight and body metrics tracker
+ openScale is an open-source application for tracking weight and
+ body metrics with support for Bluetooth scales. Features include:
+  * Track weight, BMI, body fat, muscle mass, and more
+  * Support for multiple Bluetooth scales
+  * Data visualization with charts
+  * Import/export data
+  * Multi-user support

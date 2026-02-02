@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	./gradlew :linux_app:installDist
+
+override_dh_auto_install:
+	mkdir -p debian/openscale/usr/lib/openscale
+	mkdir -p debian/openscale/usr/bin
+	cp -r linux_app/build/install/linux_app/* debian/openscale/usr/lib/openscale/
+	ln -s /usr/lib/openscale/bin/linux_app debian/openscale/usr/bin/openscale
+
+override_dh_auto_clean:
+	./gradlew clean || true
+	dh_auto_clean

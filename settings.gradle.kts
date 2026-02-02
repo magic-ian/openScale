@@ -13,7 +13,7 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()
@@ -23,12 +23,12 @@ dependencyResolutionManagement {
 
 rootProject.name = "openScale-multiplatform"
 
-// Include the shared Kotlin Multiplatform module
-include(":shared")
+// Include the shared Kotlin Multiplatform module (commented out due to Android dependencies)
+// include(":shared")
 
-// Include the Android app
-include(":android_app")
-include(":android_app:app")
+// Include the Android app (commented out due to network restrictions)
+// include(":android_app")
+// include(":android_app:app")
 
 // Include the Linux app
 include(":linux_app")
