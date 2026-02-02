@@ -42,13 +42,22 @@ openScale is built with **Kotlin Multiplatform** to provide a native experience 
 - **UI Framework**: Jetpack Compose with Material 3
 - **Minimum SDK**: Android 12 (API 31)
 
-## Linux Mobile
+## Linux Mobile & Desktop
 - **Supported Environments**: 
   - **phosh** (GNOME-based mobile environment)
   - **Plasma Mobile** (KDE-based mobile environment)
+  - **Desktop Linux** (any modern Linux distribution)
 - **UI Framework**: Native GTK/Qt implementations
-- **Distribution**: Coming soon via Flatpak
+- **Distribution Formats**: 
+  - **Flatpak** - Universal Linux package (recommended)
+  - **Debian/Ubuntu** - .deb packages
+  - **Fedora/RHEL** - .rpm packages
+  - **Arch Linux** - PKGBUILD for AUR
+  - **NixOS** - Nix expression
+  - **AppImage** - Portable self-contained executable
 - **Status**: In development - contributions welcome!
+
+For packaging and installation instructions, see [PACKAGING.md](./PACKAGING.md).
 
 For architecture details and platform-specific implementation information, see [ARCHITECTURE.md](./ARCHITECTURE.md).
 

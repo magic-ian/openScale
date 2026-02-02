@@ -1,0 +1,47 @@
+app-id: com.health.openscale
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.openjdk21
+command: openscale
+
+finish-args:
+  # X11 + XShm access
+  - --share=ipc
+  - --socket=fallback-x11
+  # Wayland access
+  - --socket=wayland
+  # Bluetooth access for scale connectivity
+  - --system-talk-name=org.bluez
+  - --allow=bluetooth
+  # File access for data import/export
+  - --filesystem=xdg-documents
+  # Network access (if needed for future features)
+  - --share=network
+  # Notifications
+  - --talk-name=org.freedesktop.Notifications
+
+modules:
+  - name: openjdk
+    buildsystem: simple
+    build-commands:
+      - /usr/lib/sdk/openjdk21/install.sh
+
+  - name: openscale
+    buildsystem: simple
+    build-commands:
+      - ./gradlew :linux_app:installDist
+      - mkdir -p /app/bin
+      - cp -r linux_app/build/install/linux_app/* /app/
+      - ln -s /app/bin/linux_app /app/bin/openscale
+    sources:
+      - type: git
+        url: https://github.com/magic-ian/openScale.git
+        branch: master
+      - type: file
+        path: gradlew
+      - type: file
+        path: gradlew.bat
+      - type: dir
+        path: gradle
