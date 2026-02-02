@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "2.3.0"
+    kotlin("jvm")
     application
 }
 
@@ -11,8 +11,8 @@ repositories {
 }
 
 dependencies {
-    // Reference to shared module
-    implementation(project(":shared"))
+    // Reference to shared module (commented out for now)
+    // implementation(project(":shared"))
     
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
