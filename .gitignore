@@ -17,6 +17,8 @@ gen/
 .gradle/
 .idea
 build/
+*/build/
+.kotlin/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -56,3 +58,8 @@ fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
 fastlane/README.md
+
+# Kotlin Multiplatform
+.kotlin-multiplatform/
+shared/build/
+linux_app/build/
