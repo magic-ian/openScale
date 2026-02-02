@@ -37,7 +37,7 @@ modules:
       - ln -s /app/bin/linux_app /app/bin/openscale
     sources:
       - type: git
-        url: https://github.com/magic-ian/openScale.git
+        url: https://github.com/oliexdev/openScale.git  # Use upstream repository
         branch: master
       - type: file
         path: gradlew

@@ -6,10 +6,16 @@ on:
   pull_request:
     branches: [ master, develop ]
 
+permissions:
+  contents: read
+
 jobs:
   build-linux-app:
     name: Build Linux Application
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
     
     steps:
     - name: Checkout code
@@ -48,6 +54,8 @@ jobs:
     name: Test Debian Packaging
     runs-on: ubuntu-latest
     needs: build-linux-app
+    permissions:
+      contents: read
     
     steps:
     - name: Checkout code
@@ -76,6 +84,8 @@ jobs:
     name: Test RPM Packaging
     runs-on: ubuntu-latest
     needs: build-linux-app
+    permissions:
+      contents: read
     
     steps:
     - name: Checkout code
@@ -93,6 +103,8 @@ jobs:
     name: Test Arch Linux Packaging
     runs-on: ubuntu-latest
     needs: build-linux-app
+    permissions:
+      contents: read
     
     steps:
     - name: Checkout code
@@ -110,6 +122,8 @@ jobs:
     name: Test Nix Packaging
     runs-on: ubuntu-latest
     needs: build-linux-app
+    permissions:
+      contents: read
     
     steps:
     - name: Checkout code
@@ -131,6 +145,8 @@ jobs:
     name: Test Flatpak Packaging
     runs-on: ubuntu-latest
     needs: build-linux-app
+    permissions:
+      contents: read
     
     steps:
     - name: Checkout code
@@ -148,6 +164,8 @@ jobs:
     name: Test AppImage Build Script
     runs-on: ubuntu-latest
     needs: build-linux-app
+    permissions:
+      contents: read
     
     steps:
     - name: Checkout code
@@ -164,6 +182,8 @@ jobs:
   validate-packaging-docs:
     name: Validate Packaging Documentation
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
     - name: Checkout code

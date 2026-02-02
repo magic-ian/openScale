@@ -8,7 +8,10 @@ url="https://github.com/oliexdev/openScale"
 license=('GPL3')
 depends=('java-runtime>=21' 'bluez')
 makedepends=('java-environment>=21' 'gradle')
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/magic-ian/openScale/archive/refs/tags/v${pkgver}.tar.gz")
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/oliexdev/openScale/archive/refs/tags/v${pkgver}.tar.gz")
+# TODO: Update checksum for each release using:
+# makepkg -g >> PKGBUILD
+# Then replace the line below with the generated checksum
 sha256sums=('SKIP')
 
 build() {

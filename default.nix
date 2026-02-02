@@ -12,9 +12,11 @@ stdenv.mkDerivation rec {
   version = "3.0.2";
 
   src = fetchFromGitHub {
-    owner = "magic-ian";
+    owner = "oliexdev";  # Use upstream repository
     repo = "openScale";
     rev = "v${version}";
+    # TODO: Update hash for each release using:
+    # nix-prefetch-github oliexdev openScale --rev v3.0.2
     hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
   };
 
