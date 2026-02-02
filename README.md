@@ -4,6 +4,8 @@
 
 Open-source weight and body metrics tracker, with support for Bluetooth scales
 
+**Available on Android and Linux Mobile (phosh & Plasma Mobile)**
+
 <a href="https://f-droid.org/repository/browse/?fdid=com.health.openscale" target="_blank">
   <img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80"/>
 </a>
@@ -30,6 +32,25 @@ Open-source weight and body metrics tracker, with support for Bluetooth scales
 > This is an early beta; expect some rough edges. Your active testing and detailed reports will make openScale 3.0 a success!
 >
 > [**Learn More About Beta Testing & Reporting Here**](https://github.com/oliexdev/openScale/issues/1139)
+
+# Platforms :computer:
+
+openScale is built with **Kotlin Multiplatform** to provide a native experience on multiple platforms while maintaining a single shared codebase for business logic.
+
+## Android
+- **Available**: F-Droid, Google Play (Beta)
+- **UI Framework**: Jetpack Compose with Material 3
+- **Minimum SDK**: Android 12 (API 31)
+
+## Linux Mobile
+- **Supported Environments**: 
+  - **phosh** (GNOME-based mobile environment)
+  - **Plasma Mobile** (KDE-based mobile environment)
+- **UI Framework**: Native GTK/Qt implementations
+- **Distribution**: Coming soon via Flatpak
+- **Status**: In development - contributions welcome!
+
+For architecture details and platform-specific implementation information, see [ARCHITECTURE.md](./ARCHITECTURE.md).
 
 # Summary :clipboard:
 
